@@ -2,8 +2,9 @@ import React from 'react';
 
 const Header=function(){
 
+    const headerStyle={textAlign:'center',backgroundColor:'black',color:'white',textTransform:'uppercase'};
     return(
-        <div className="header">
+        <div style={headerStyle}>
       Phone directory
     </div>
     )
