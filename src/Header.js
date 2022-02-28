@@ -1,10 +1,9 @@
 import React from 'react';
+import './Header.css';
 
 const Header=function(){
-
-    const headerStyle={textAlign:'center',backgroundColor:'black',color:'white',textTransform:'uppercase'};
     return(
-        <div style={headerStyle}>
+        <div className='header'>
       Phone directory
     </div>
     )
