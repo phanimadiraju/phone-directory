@@ -18,6 +18,13 @@ class AddSubscriber extends Component {
         state[e.target.name] = e.target.value;
         this.setState(state);
     }
+
+    onFormSubmitted= (e) =>{
+        e.preventDefault();
+        this.props.addSubscriberHandler(this.state);
+        this.setState({id:0,name:'',phone:''})
+    }
+
     render(){
 
         const {name, phone} = this.state;
@@ -29,7 +36,7 @@ class AddSubscriber extends Component {
                 <div className='component-body-container'>
                     <button className='custom-btn'>Back</button>
                     </div>
-                    <form className="subscriber-form">
+                    <form className="subscriber-form" onSubmit={this.onFormSubmitted.bind(this)}>
                         <label htmlFor="name" className='label-control'>Name : </label><br/>
                         <input id="name" type="text" className='input-control' name="name" onChange={this.inputChangeHandler}></input><br/><br/>
                         <label htmlFor="phone" className='label-control'>Phone : </label><br/>

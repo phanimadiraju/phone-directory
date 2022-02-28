@@ -1,8 +1,8 @@
 import Header from './Header';
-import './App.css';
+import './ShowSubscribers.css';
 import React,{Component} from 'react';
 
-class App extends Component {
+class ShowSubscribers extends Component {
   // let subscribers=[
   //   {
   //     id:1,
@@ -16,13 +16,28 @@ class App extends Component {
   // }
   // ]
 
-  constructor(){
-    super();
-    this.state={
-      subscribersListToShow:[]
-    }
-}
+//   constructor(){
+//     console.log('constructor called');
+//     super();
+//     this.state={
+//       subscribersListToShow:[]
+//     }
+// }
+
+// componentDidMount(){
+//   console.log('component did mount called');
+// let newSubscriber={
+//   id:0,
+//   name:'Gaurav',
+//   phone:'9977886655'
+// }
+// let subscribersList=this.state.subscribersListToShow;
+// subscribersList.push(newSubscriber);
+// this.setState({ subscribersListToShow:subscribersList})
+
+//}
   render(){
+    console.log('Render method called');
 
 return(
     <div className='component-container'>
@@ -36,7 +51,7 @@ return(
           </div>
 
           {
-      this.state.subscribersListToShow.map(sub => {
+      this.props.subscribersList.map(sub => {
         return <div key={sub.id} className="grid-container">
           <span className="grid-item">{sub.name}</span>
           <span className="grid-item">{sub.phone}</span>
@@ -55,4 +70,4 @@ return(
   
 }
 
-export default App;
+export default ShowSubscribers;
